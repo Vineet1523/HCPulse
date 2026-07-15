@@ -1,6 +1,6 @@
 import { configureStore, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-const API = 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 export const loadHcps = createAsyncThunk('crm/loadHcps', async () => {
   const r = await fetch(`${API}/api/hcps`)
